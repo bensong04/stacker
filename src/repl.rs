@@ -93,10 +93,12 @@ pub fn new_game_repl<'a>(game: Rc<RefCell<Game>>) -> Result<Repl<'a>, &'static s
                 "Remove the player from the game and display final stats",
                 (name: String, stack: i64) => |name, stack| {
                     let mut binding = game5.borrow_mut();
+                    let total_before = binding.total_money();
                     let player = binding.get_player(&name).map_err(|s| ReplError(s))?;
                     println!("{}", player);
                     let info = binding.cashout_player(&name, stack).map_err(|s| ReplError(s))?;
                     println!("\nSUMMARY:\nBUYIN: ${} | CASHOUT: ${} | LEDGER: ${} | PAID RAKE: ${}", info.0, info.1, info.2, info.3);
+                    println!("BANK: ${} -> ${}", total_before, total_before - info.1); // rake does not leave table
                     Ok(CommandStatus::Done)
                 }
             },
