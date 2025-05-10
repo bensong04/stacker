@@ -91,7 +91,7 @@ impl Display for Game {
         self.ledger
             .values()
             .try_for_each(|player| write!(f, "\n-----\n{}", player))?;
-        write!(f, "TOTAL: ${}", self.total_money())?;
+        write!(f, "\nTOTAL: ${}", self.total_money())?;
         Ok(())
     }
 }
