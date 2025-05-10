@@ -28,7 +28,7 @@ Stacker is built with [easy_repl](https://crates.io/crates/easy_repl).
 Stacker requires `cargo`. On Mac: `brew install cargo`. On Linux: `sudo apt-get install cargo`.
 
 ```sh
-git clone https://github.com/your-username/stacker.git
+git clone https://github.com/bensong04/stacker.git
 cd stacker
 
 make
