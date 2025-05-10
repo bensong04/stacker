@@ -21,6 +21,10 @@ Type `stacker <config.toml>` into your terminal to launch the REPL. Currently, s
 
 Stacker is built with [easy_repl](https://crates.io/crates/easy_repl). 
 
+## Example
+
+![Example trace of stacker running](./assets/example.png)
+
 ## Installation
 
 ### From source
